@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Test Report</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>Test Report</h1>
+<p class='attribute'><strong>Start Time:</strong> 2018-04-01 17:02:39</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:01.490000</p>
+<p class='attribute'><strong>Status:</strong> Pass 5</p>
+
+<p class='description'>Test Description</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='passClass'>
+    <td>test1getBookList.getBookList</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgetbook</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        pass</a>
+
+    <div id='div_pt1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.1: 1
+00001
+{u'totalProperty': 8, u'root': [{u'id': 12, u'author': u'John Ferguson Smart', u'name': u'Jenkins\u6743\u5a01\u6307\u5357', u'digest': u'John Ferguson Smart\uff0cWakaleo Consulting\u7684\u4e3b\u7ba1\u3002', u'year': 2016}, {u'id': 11, u'author': u'John Ferguson Smart', u'name': u'Jenkins\u6743\u5a01\u6307\u5357', u'digest': u'John Ferguson Smart\uff0cWakaleo Consulting\u7684\u4e3b\u7ba1\u3002', u'year': 2016}, {u'id': 10, u'author': u'John Ferguson Smart', u'name': u'Jenkins\u6743\u5a01\u6307\u5357', u'digest': u'John Ferguson Smart\uff0cWakaleo Consulting\u7684\u4e3b\u7ba1\u3002', u'year': 2016}, {u'id': 8, u'author': u'John Ferguson Smart', u'name': u'Jenkins\u6743\u5a01\u6307\u5357', u'digest': u'John Ferguson Smart\uff0cWakaleo Consulting\u7684\u4e3b\u7ba1\u3002', u'year': 2016}, {u'id': 5, u'author': u'john1', u'name': u'\u6d4b\u8bd5\u6307\u53571', u'digest': u'Selenium', u'year': 2019}, {u'id': 4, u'author': u'\u8a79\u59c6\u65af\xb7\u7279\u6069\u5e03\u5c14\uff08James Turnbull\uff09', u'name': u'\u7b2c\u4e00\u672cDocker\u4e66 \u4fee\u8ba2\u7248', u'digest': u'Docker\u662f\u4e00\u4e2a\u5f00\u6e90\u7684\u5e94\u7528\u5bb9\u5668\u5f15\u64ce\uff0c\u5f00\u53d1\u8005\u53ef\u4ee5\u5229\u7528Docker\u6253\u5305\u81ea\u5df1\u7684\u5e94\u7528\u4ee5\u53ca\u4f9d\u8d56\u5305\u5230\u4e00\u4e2a\u53ef\u79fb\u690d\u7684\u5bb9\u5668\u4e2d\uff0c\u7136\u540e\u53d1\u5e03\u5230\u4efb\u4f55\u6d41\u884c\u7684Linux\u673a\u5668\u4e0a\uff0c\u4e5f\u53ef\u4ee5\u5b9e\u73b0\u865a\u62df\u5316\u3002', u'year': 2016}, {u'id': 3, u'author': u'\u8bb8\u6653\u658c', u'name': u'Maven\u5b9e\u6218', u'digest': u'\u672c\u4e66\u662f\u56fd\u5185\u7b2c\u4e00\u672c\u516c\u5f00\u51fa\u7248\u7684Maven\u4e13\u8457\u3002\u5b83\u5185\u5bb9\u65b0\u9896\uff0c\u57fa\u4e8e*\u53d1\u5e03\u7684Maven 3.0\uff0c\u4e0d\u4ec5\u8be6\u5c3d\u8bb2\u89e3\u4e86Maven 3.0\u7684\u6240\u6709\u65b0\u529f\u80fd\u548c\u65b0\u7279\u6027\u3002', u'year': 2011}, {u'id': 1, u'author': u'\u6c6a\u4e91\u98de', u'name': u'JavaEE\u5f00\u53d1\u7684\u98a0\u8986\u8005: Spring Boot\u5b9e\u6218', u'digest': u'\u5728\u5f53\u4ecaJava EE \u5f00\u53d1\u4e2d\uff0cSpring \u6846\u67b6\u662f\u5f53\u4e4b\u65e0\u6127\u7684\u738b\u8005\u3002\u800cSpring Boot \u662fSpring \u4e3b\u63a8\u7684\u57fa\u4e8e\u201c\u4e60\u60ef\u4f18\u4e8e\u914d\u7f6e\u201d\u7684\u539f\u5219\uff0c\u8ba9\u4f60\u80fd\u591f\u5feb\u901f\u642d\u5efa\u5e94\u7528\u7684\u6846\u67b6\uff0c\u4ece\u800c\u4f7f\u5f97Java EE \u5f00\u53d1\u53d8\u5f97\u5f02\u5e38\u7b80\u5355\u3002', u'year': 2016}]}
+1
+E:\pycharm\httpspace\common\ConnetExcel.py:87: DeprecationWarning: Call to deprecated function get_sheet_by_name (Use wb[sheetname]).
+  wtable = writeExcel.get_sheet_by_name('dataout')
+00002
+{u'totalProperty': 8, u'root': [{u'id': 12, u'author': u'John Ferguson Smart', u'name': u'Jenkins\u6743\u5a01\u6307\u5357', u'digest': u'John Ferguson Smart\uff0cWakaleo Consulting\u7684\u4e3b\u7ba1\u3002', u'year': 2016}, {u'id': 11, u'author': u'John Ferguson Smart', u'name': u'Jenkins\u6743\u5a01\u6307\u5357', u'digest': u'John Ferguson Smart\uff0cWakaleo Consulting\u7684\u4e3b\u7ba1\u3002', u'year': 2016}, {u'id': 10, u'author': u'John Ferguson Smart', u'name': u'Jenkins\u6743\u5a01\u6307\u5357', u'digest': u'John Ferguson Smart\uff0cWakaleo Consulting\u7684\u4e3b\u7ba1\u3002', u'year': 2016}, {u'id': 8, u'author': u'John Ferguson Smart', u'name': u'Jenkins\u6743\u5a01\u6307\u5357', u'digest': u'John Ferguson Smart\uff0cWakaleo Consulting\u7684\u4e3b\u7ba1\u3002', u'year': 2016}, {u'id': 5, u'author': u'john1', u'name': u'\u6d4b\u8bd5\u6307\u53571', u'digest': u'Selenium', u'year': 2019}, {u'id': 4, u'author': u'\u8a79\u59c6\u65af\xb7\u7279\u6069\u5e03\u5c14\uff08James Turnbull\uff09', u'name': u'\u7b2c\u4e00\u672cDocker\u4e66 \u4fee\u8ba2\u7248', u'digest': u'Docker\u662f\u4e00\u4e2a\u5f00\u6e90\u7684\u5e94\u7528\u5bb9\u5668\u5f15\u64ce\uff0c\u5f00\u53d1\u8005\u53ef\u4ee5\u5229\u7528Docker\u6253\u5305\u81ea\u5df1\u7684\u5e94\u7528\u4ee5\u53ca\u4f9d\u8d56\u5305\u5230\u4e00\u4e2a\u53ef\u79fb\u690d\u7684\u5bb9\u5668\u4e2d\uff0c\u7136\u540e\u53d1\u5e03\u5230\u4efb\u4f55\u6d41\u884c\u7684Linux\u673a\u5668\u4e0a\uff0c\u4e5f\u53ef\u4ee5\u5b9e\u73b0\u865a\u62df\u5316\u3002', u'year': 2016}, {u'id': 3, u'author': u'\u8bb8\u6653\u658c', u'name': u'Maven\u5b9e\u6218', u'digest': u'\u672c\u4e66\u662f\u56fd\u5185\u7b2c\u4e00\u672c\u516c\u5f00\u51fa\u7248\u7684Maven\u4e13\u8457\u3002\u5b83\u5185\u5bb9\u65b0\u9896\uff0c\u57fa\u4e8e*\u53d1\u5e03\u7684Maven 3.0\uff0c\u4e0d\u4ec5\u8be6\u5c3d\u8bb2\u89e3\u4e86Maven 3.0\u7684\u6240\u6709\u65b0\u529f\u80fd\u548c\u65b0\u7279\u6027\u3002', u'year': 2011}, {u'id': 1, u'author': u'\u6c6a\u4e91\u98de', u'name': u'JavaEE\u5f00\u53d1\u7684\u98a0\u8986\u8005: Spring Boot\u5b9e\u6218', u'digest': u'\u5728\u5f53\u4ecaJava EE \u5f00\u53d1\u4e2d\uff0cSpring \u6846\u67b6\u662f\u5f53\u4e4b\u65e0\u6127\u7684\u738b\u8005\u3002\u800cSpring Boot \u662fSpring \u4e3b\u63a8\u7684\u57fa\u4e8e\u201c\u4e60\u60ef\u4f18\u4e8e\u914d\u7f6e\u201d\u7684\u539f\u5219\uff0c\u8ba9\u4f60\u80fd\u591f\u5feb\u901f\u642d\u5efa\u5e94\u7528\u7684\u6846\u67b6\uff0c\u4ece\u800c\u4f7f\u5f97Java EE \u5f00\u53d1\u53d8\u5f97\u5f02\u5e38\u7b80\u5355\u3002', u'year': 2016}]}
+3
+E:\pycharm\httpspace\common\ConnetExcel.py:87: DeprecationWarning: Call to deprecated function get_sheet_by_name (Use wb[sheetname]).
+  wtable = writeExcel.get_sheet_by_name('dataout')
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test2getBookList.testgetBookList</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c2',1)">Detail</a></td>
+</tr>
+
+<tr id='pt2.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testgetbooklist</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.1')" >
+        pass</a>
+
+    <div id='div_pt2.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.1: 3
+[{'bookid': u'', 'bookauthor': u'', 'bookname': u'', 'bookyear': u'', 'bookdigest': u'', 'interface': u'test/book/getBookList', 'id': u'00003'}]
+00003
+{u'status': 405, u'exception': u'org.springframework.web.HttpRequestMethodNotSupportedException', u'timestamp': 1522573360038L, u'error': u'Method Not Allowed', u'path': u'/test/book/getBookList', u'message': u"Request method 'GET' not supported"}
+5
+E:\pycharm\httpspace\common\ConnetExcel.py:87: DeprecationWarning: Call to deprecated function get_sheet_by_name (Use wb[sheetname]).
+  wtable = writeExcel.get_sheet_by_name('dataout')
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test3addBook.addBookList</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c3',1)">Detail</a></td>
+</tr>
+
+<tr id='pt3.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testaddbooklist</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.1')" >
+        pass</a>
+
+    <div id='div_pt3.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.1: 1
+00101
+{'name': u'Jenkins\u6743\u5a01\u6307\u5357', 'author': u'John Ferguson Smart', 'caseid': u'00101', 'year': '2016', 'id': '12', 'digest': u'John Ferguson Smart\uff0cWakaleo Consulting\u7684\u4e3b\u7ba1\u3002'}
+{u'errorNo': u'1', u'errorInfo': u'\u8be5id\u5df2\u5b58\u5728\u3002', u'success': False}
+False
+1
+该id已存在。
+1
+E:\pycharm\httpspace\common\ConnetExcel.py:87: DeprecationWarning: Call to deprecated function get_sheet_by_name (Use wb[sheetname]).
+  wtable = writeExcel.get_sheet_by_name('dataout')
+00102
+{'name': u'\u6743\u5a01\u6307\u5357', 'author': u'John Ferguson Smart', 'caseid': u'00102', 'year': '2016', 'id': '12', 'digest': u'John Ferguson Smart\uff0cWakaleo Consulting\u7684\u4e3b\u7ba1\u3002'}
+{u'errorNo': u'1', u'errorInfo': u'\u8be5id\u5df2\u5b58\u5728\u3002', u'success': False}
+False
+1
+该id已存在。
+3
+E:\pycharm\httpspace\common\ConnetExcel.py:87: DeprecationWarning: Call to deprecated function get_sheet_by_name (Use wb[sheetname]).
+  wtable = writeExcel.get_sheet_by_name('dataout')
+12
+4
+00101
+{u'totalProperty': 8, u'root': [{u'id': 12, u'author': u'John Ferguson Smart', u'name': u'Jenkins\u6743\u5a01\u6307\u5357', u'digest': u'John Ferguson Smart\uff0cWakaleo Consulting\u7684\u4e3b\u7ba1\u3002', u'year': 2016}, {u'id': 11, u'author': u'John Ferguson Smart', u'name': u'Jenkins\u6743\u5a01\u6307\u5357', u'digest': u'John Ferguson Smart\uff0cWakaleo Consulting\u7684\u4e3b\u7ba1\u3002', u'year': 2016}, {u'id': 10, u'author': u'John Ferguson Smart', u'name': u'Jenkins\u6743\u5a01\u6307\u5357', u'digest': u'John Ferguson Smart\uff0cWakaleo Consulting\u7684\u4e3b\u7ba1\u3002', u'year': 2016}, {u'id': 8, u'author': u'John Ferguson Smart', u'name': u'Jenkins\u6743\u5a01\u6307\u5357', u'digest': u'John Ferguson Smart\uff0cWakaleo Consulting\u7684\u4e3b\u7ba1\u3002', u'year': 2016}, {u'id': 5, u'author': u'john1', u'name': u'\u6d4b\u8bd5\u6307\u53571', u'digest': u'Selenium', u'year': 2019}, {u'id': 4, u'author': u'\u8a79\u59c6\u65af\xb7\u7279\u6069\u5e03\u5c14\uff08James Turnbull\uff09', u'name': u'\u7b2c\u4e00\u672cDocker\u4e66 \u4fee\u8ba2\u7248', u'digest': u'Docker\u662f\u4e00\u4e2a\u5f00\u6e90\u7684\u5e94\u7528\u5bb9\u5668\u5f15\u64ce\uff0c\u5f00\u53d1\u8005\u53ef\u4ee5\u5229\u7528Docker\u6253\u5305\u81ea\u5df1\u7684\u5e94\u7528\u4ee5\u53ca\u4f9d\u8d56\u5305\u5230\u4e00\u4e2a\u53ef\u79fb\u690d\u7684\u5bb9\u5668\u4e2d\uff0c\u7136\u540e\u53d1\u5e03\u5230\u4efb\u4f55\u6d41\u884c\u7684Linux\u673a\u5668\u4e0a\uff0c\u4e5f\u53ef\u4ee5\u5b9e\u73b0\u865a\u62df\u5316\u3002', u'year': 2016}, {u'id': 3, u'author': u'\u8bb8\u6653\u658c', u'name': u'Maven\u5b9e\u6218', u'digest': u'\u672c\u4e66\u662f\u56fd\u5185\u7b2c\u4e00\u672c\u516c\u5f00\u51fa\u7248\u7684Maven\u4e13\u8457\u3002\u5b83\u5185\u5bb9\u65b0\u9896\uff0c\u57fa\u4e8e*\u53d1\u5e03\u7684Maven 3.0\uff0c\u4e0d\u4ec5\u8be6\u5c3d\u8bb2\u89e3\u4e86Maven 3.0\u7684\u6240\u6709\u65b0\u529f\u80fd\u548c\u65b0\u7279\u6027\u3002', u'year': 2011}, {u'id': 1, u'author': u'\u6c6a\u4e91\u98de', u'name': u'JavaEE\u5f00\u53d1\u7684\u98a0\u8986\u8005: Spring Boot\u5b9e\u6218', u'digest': u'\u5728\u5f53\u4ecaJava EE \u5f00\u53d1\u4e2d\uff0cSpring \u6846\u67b6\u662f\u5f53\u4e4b\u65e0\u6127\u7684\u738b\u8005\u3002\u800cSpring Boot \u662fSpring \u4e3b\u63a8\u7684\u57fa\u4e8e\u201c\u4e60\u60ef\u4f18\u4e8e\u914d\u7f6e\u201d\u7684\u539f\u5219\uff0c\u8ba9\u4f60\u80fd\u591f\u5feb\u901f\u642d\u5efa\u5e94\u7528\u7684\u6846\u67b6\uff0c\u4ece\u800c\u4f7f\u5f97Java EE \u5f00\u53d1\u53d8\u5f97\u5f02\u5e38\u7b80\u5355\u3002', u'year': 2016}]}
+7
+E:\pycharm\httpspace\common\ConnetExcel.py:87: DeprecationWarning: Call to deprecated function get_sheet_by_name (Use wb[sheetname]).
+  wtable = writeExcel.get_sheet_by_name('dataout')
+12
+E:\pycharm\httpspace\common\ConnetExcel.py:101: DeprecationWarning: Call to deprecated function get_sheet_by_name (Use wb[sheetname]).
+  wtable = writeExcel.get_sheet_by_name('dataout')
+12
+5
+00102
+{u'totalProperty': 8, u'root': [{u'id': 12, u'author': u'John Ferguson Smart', u'name': u'Jenkins\u6743\u5a01\u6307\u5357', u'digest': u'John Ferguson Smart\uff0cWakaleo Consulting\u7684\u4e3b\u7ba1\u3002', u'year': 2016}, {u'id': 11, u'author': u'John Ferguson Smart', u'name': u'Jenkins\u6743\u5a01\u6307\u5357', u'digest': u'John Ferguson Smart\uff0cWakaleo Consulting\u7684\u4e3b\u7ba1\u3002', u'year': 2016}, {u'id': 10, u'author': u'John Ferguson Smart', u'name': u'Jenkins\u6743\u5a01\u6307\u5357', u'digest': u'John Ferguson Smart\uff0cWakaleo Consulting\u7684\u4e3b\u7ba1\u3002', u'year': 2016}, {u'id': 8, u'author': u'John Ferguson Smart', u'name': u'Jenkins\u6743\u5a01\u6307\u5357', u'digest': u'John Ferguson Smart\uff0cWakaleo Consulting\u7684\u4e3b\u7ba1\u3002', u'year': 2016}, {u'id': 5, u'author': u'john1', u'name': u'\u6d4b\u8bd5\u6307\u53571', u'digest': u'Selenium', u'year': 2019}, {u'id': 4, u'author': u'\u8a79\u59c6\u65af\xb7\u7279\u6069\u5e03\u5c14\uff08James Turnbull\uff09', u'name': u'\u7b2c\u4e00\u672cDocker\u4e66 \u4fee\u8ba2\u7248', u'digest': u'Docker\u662f\u4e00\u4e2a\u5f00\u6e90\u7684\u5e94\u7528\u5bb9\u5668\u5f15\u64ce\uff0c\u5f00\u53d1\u8005\u53ef\u4ee5\u5229\u7528Docker\u6253\u5305\u81ea\u5df1\u7684\u5e94\u7528\u4ee5\u53ca\u4f9d\u8d56\u5305\u5230\u4e00\u4e2a\u53ef\u79fb\u690d\u7684\u5bb9\u5668\u4e2d\uff0c\u7136\u540e\u53d1\u5e03\u5230\u4efb\u4f55\u6d41\u884c\u7684Linux\u673a\u5668\u4e0a\uff0c\u4e5f\u53ef\u4ee5\u5b9e\u73b0\u865a\u62df\u5316\u3002', u'year': 2016}, {u'id': 3, u'author': u'\u8bb8\u6653\u658c', u'name': u'Maven\u5b9e\u6218', u'digest': u'\u672c\u4e66\u662f\u56fd\u5185\u7b2c\u4e00\u672c\u516c\u5f00\u51fa\u7248\u7684Maven\u4e13\u8457\u3002\u5b83\u5185\u5bb9\u65b0\u9896\uff0c\u57fa\u4e8e*\u53d1\u5e03\u7684Maven 3.0\uff0c\u4e0d\u4ec5\u8be6\u5c3d\u8bb2\u89e3\u4e86Maven 3.0\u7684\u6240\u6709\u65b0\u529f\u80fd\u548c\u65b0\u7279\u6027\u3002', u'year': 2011}, {u'id': 1, u'author': u'\u6c6a\u4e91\u98de', u'name': u'JavaEE\u5f00\u53d1\u7684\u98a0\u8986\u8005: Spring Boot\u5b9e\u6218', u'digest': u'\u5728\u5f53\u4ecaJava EE \u5f00\u53d1\u4e2d\uff0cSpring \u6846\u67b6\u662f\u5f53\u4e4b\u65e0\u6127\u7684\u738b\u8005\u3002\u800cSpring Boot \u662fSpring \u4e3b\u63a8\u7684\u57fa\u4e8e\u201c\u4e60\u60ef\u4f18\u4e8e\u914d\u7f6e\u201d\u7684\u539f\u5219\uff0c\u8ba9\u4f60\u80fd\u591f\u5feb\u901f\u642d\u5efa\u5e94\u7528\u7684\u6846\u67b6\uff0c\u4ece\u800c\u4f7f\u5f97Java EE \u5f00\u53d1\u53d8\u5f97\u5f02\u5e38\u7b80\u5355\u3002', u'year': 2016}]}
+9
+E:\pycharm\httpspace\common\ConnetExcel.py:87: DeprecationWarning: Call to deprecated function get_sheet_by_name (Use wb[sheetname]).
+  wtable = writeExcel.get_sheet_by_name('dataout')
+12
+E:\pycharm\httpspace\common\ConnetExcel.py:101: DeprecationWarning: Call to deprecated function get_sheet_by_name (Use wb[sheetname]).
+  wtable = writeExcel.get_sheet_by_name('dataout')
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test5updateBook.testUpdateBook</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c4',1)">Detail</a></td>
+</tr>
+
+<tr id='pt4.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testupdatebook</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.1')" >
+        pass</a>
+
+    <div id='div_pt4.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt4.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt4.1: 1
+00301
+{'name': u'\u6d4b\u8bd5\u6307\u53571', 'author': u'john1', 'caseid': u'00301', 'year': '2019', 'id': '5', 'digest': u'Selenium'}
+http://127.0.0.1:8080/test/book/updateBook
+{u'errorNo': u'0', u'errorInfo': u'\u66f4\u65b0\u6210\u529f', u'success': True}
+True
+0
+更新成功
+1
+E:\pycharm\httpspace\common\ConnetExcel.py:87: DeprecationWarning: Call to deprecated function get_sheet_by_name (Use wb[sheetname]).
+  wtable = writeExcel.get_sheet_by_name('dataout')
+00302
+{'name': u'\u6d4b\u8bd5\u6307\u5357', 'author': u'john', 'caseid': u'00302', 'year': '2019', 'id': '100', 'digest': u'Selenium'}
+http://127.0.0.1:8080/test/book/updateBook
+{u'errorNo': u'1', u'errorInfo': u'\u8be5id\u4e0d\u5b58\u5728\u3002', u'success': False}
+False
+1
+该id不存在。
+3
+E:\pycharm\httpspace\common\ConnetExcel.py:87: DeprecationWarning: Call to deprecated function get_sheet_by_name (Use wb[sheetname]).
+  wtable = writeExcel.get_sheet_by_name('dataout')
+5
+24
+00301
+{u'totalProperty': 8, u'root': [{u'id': 12, u'author': u'John Ferguson Smart', u'name': u'Jenkins\u6743\u5a01\u6307\u5357', u'digest': u'John Ferguson Smart\uff0cWakaleo Consulting\u7684\u4e3b\u7ba1\u3002', u'year': 2016}, {u'id': 11, u'author': u'John Ferguson Smart', u'name': u'Jenkins\u6743\u5a01\u6307\u5357', u'digest': u'John Ferguson Smart\uff0cWakaleo Consulting\u7684\u4e3b\u7ba1\u3002', u'year': 2016}, {u'id': 10, u'author': u'John Ferguson Smart', u'name': u'Jenkins\u6743\u5a01\u6307\u5357', u'digest': u'John Ferguson Smart\uff0cWakaleo Consulting\u7684\u4e3b\u7ba1\u3002', u'year': 2016}, {u'id': 8, u'author': u'John Ferguson Smart', u'name': u'Jenkins\u6743\u5a01\u6307\u5357', u'digest': u'John Ferguson Smart\uff0cWakaleo Consulting\u7684\u4e3b\u7ba1\u3002', u'year': 2016}, {u'id': 5, u'author': u'john1', u'name': u'\u6d4b\u8bd5\u6307\u53571', u'digest': u'Selenium', u'year': 2019}, {u'id': 4, u'author': u'\u8a79\u59c6\u65af\xb7\u7279\u6069\u5e03\u5c14\uff08James Turnbull\uff09', u'name': u'\u7b2c\u4e00\u672cDocker\u4e66 \u4fee\u8ba2\u7248', u'digest': u'Docker\u662f\u4e00\u4e2a\u5f00\u6e90\u7684\u5e94\u7528\u5bb9\u5668\u5f15\u64ce\uff0c\u5f00\u53d1\u8005\u53ef\u4ee5\u5229\u7528Docker\u6253\u5305\u81ea\u5df1\u7684\u5e94\u7528\u4ee5\u53ca\u4f9d\u8d56\u5305\u5230\u4e00\u4e2a\u53ef\u79fb\u690d\u7684\u5bb9\u5668\u4e2d\uff0c\u7136\u540e\u53d1\u5e03\u5230\u4efb\u4f55\u6d41\u884c\u7684Linux\u673a\u5668\u4e0a\uff0c\u4e5f\u53ef\u4ee5\u5b9e\u73b0\u865a\u62df\u5316\u3002', u'year': 2016}, {u'id': 3, u'author': u'\u8bb8\u6653\u658c', u'name': u'Maven\u5b9e\u6218', u'digest': u'\u672c\u4e66\u662f\u56fd\u5185\u7b2c\u4e00\u672c\u516c\u5f00\u51fa\u7248\u7684Maven\u4e13\u8457\u3002\u5b83\u5185\u5bb9\u65b0\u9896\uff0c\u57fa\u4e8e*\u53d1\u5e03\u7684Maven 3.0\uff0c\u4e0d\u4ec5\u8be6\u5c3d\u8bb2\u89e3\u4e86Maven 3.0\u7684\u6240\u6709\u65b0\u529f\u80fd\u548c\u65b0\u7279\u6027\u3002', u'year': 2011}, {u'id': 1, u'author': u'\u6c6a\u4e91\u98de', u'name': u'JavaEE\u5f00\u53d1\u7684\u98a0\u8986\u8005: Spring Boot\u5b9e\u6218', u'digest': u'\u5728\u5f53\u4ecaJava EE \u5f00\u53d1\u4e2d\uff0cSpring \u6846\u67b6\u662f\u5f53\u4e4b\u65e0\u6127\u7684\u738b\u8005\u3002\u800cSpring Boot \u662fSpring \u4e3b\u63a8\u7684\u57fa\u4e8e\u201c\u4e60\u60ef\u4f18\u4e8e\u914d\u7f6e\u201d\u7684\u539f\u5219\uff0c\u8ba9\u4f60\u80fd\u591f\u5feb\u901f\u642d\u5efa\u5e94\u7528\u7684\u6846\u67b6\uff0c\u4ece\u800c\u4f7f\u5f97Java EE \u5f00\u53d1\u53d8\u5f97\u5f02\u5e38\u7b80\u5355\u3002', u'year': 2016}]}
+47
+E:\pycharm\httpspace\common\ConnetExcel.py:87: DeprecationWarning: Call to deprecated function get_sheet_by_name (Use wb[sheetname]).
+  wtable = writeExcel.get_sheet_by_name('dataout')
+5
+E:\pycharm\httpspace\common\ConnetExcel.py:101: DeprecationWarning: Call to deprecated function get_sheet_by_name (Use wb[sheetname]).
+  wtable = writeExcel.get_sheet_by_name('dataout')
+100
+25
+00302
+{u'totalProperty': 8, u'root': [{u'id': 12, u'author': u'John Ferguson Smart', u'name': u'Jenkins\u6743\u5a01\u6307\u5357', u'digest': u'John Ferguson Smart\uff0cWakaleo Consulting\u7684\u4e3b\u7ba1\u3002', u'year': 2016}, {u'id': 11, u'author': u'John Ferguson Smart', u'name': u'Jenkins\u6743\u5a01\u6307\u5357', u'digest': u'John Ferguson Smart\uff0cWakaleo Consulting\u7684\u4e3b\u7ba1\u3002', u'year': 2016}, {u'id': 10, u'author': u'John Ferguson Smart', u'name': u'Jenkins\u6743\u5a01\u6307\u5357', u'digest': u'John Ferguson Smart\uff0cWakaleo Consulting\u7684\u4e3b\u7ba1\u3002', u'year': 2016}, {u'id': 8, u'author': u'John Ferguson Smart', u'name': u'Jenkins\u6743\u5a01\u6307\u5357', u'digest': u'John Ferguson Smart\uff0cWakaleo Consulting\u7684\u4e3b\u7ba1\u3002', u'year': 2016}, {u'id': 5, u'author': u'john1', u'name': u'\u6d4b\u8bd5\u6307\u53571', u'digest': u'Selenium', u'year': 2019}, {u'id': 4, u'author': u'\u8a79\u59c6\u65af\xb7\u7279\u6069\u5e03\u5c14\uff08James Turnbull\uff09', u'name': u'\u7b2c\u4e00\u672cDocker\u4e66 \u4fee\u8ba2\u7248', u'digest': u'Docker\u662f\u4e00\u4e2a\u5f00\u6e90\u7684\u5e94\u7528\u5bb9\u5668\u5f15\u64ce\uff0c\u5f00\u53d1\u8005\u53ef\u4ee5\u5229\u7528Docker\u6253\u5305\u81ea\u5df1\u7684\u5e94\u7528\u4ee5\u53ca\u4f9d\u8d56\u5305\u5230\u4e00\u4e2a\u53ef\u79fb\u690d\u7684\u5bb9\u5668\u4e2d\uff0c\u7136\u540e\u53d1\u5e03\u5230\u4efb\u4f55\u6d41\u884c\u7684Linux\u673a\u5668\u4e0a\uff0c\u4e5f\u53ef\u4ee5\u5b9e\u73b0\u865a\u62df\u5316\u3002', u'year': 2016}, {u'id': 3, u'author': u'\u8bb8\u6653\u658c', u'name': u'Maven\u5b9e\u6218', u'digest': u'\u672c\u4e66\u662f\u56fd\u5185\u7b2c\u4e00\u672c\u516c\u5f00\u51fa\u7248\u7684Maven\u4e13\u8457\u3002\u5b83\u5185\u5bb9\u65b0\u9896\uff0c\u57fa\u4e8e*\u53d1\u5e03\u7684Maven 3.0\uff0c\u4e0d\u4ec5\u8be6\u5c3d\u8bb2\u89e3\u4e86Maven 3.0\u7684\u6240\u6709\u65b0\u529f\u80fd\u548c\u65b0\u7279\u6027\u3002', u'year': 2011}, {u'id': 1, u'author': u'\u6c6a\u4e91\u98de', u'name': u'JavaEE\u5f00\u53d1\u7684\u98a0\u8986\u8005: Spring Boot\u5b9e\u6218', u'digest': u'\u5728\u5f53\u4ecaJava EE \u5f00\u53d1\u4e2d\uff0cSpring \u6846\u67b6\u662f\u5f53\u4e4b\u65e0\u6127\u7684\u738b\u8005\u3002\u800cSpring Boot \u662fSpring \u4e3b\u63a8\u7684\u57fa\u4e8e\u201c\u4e60\u60ef\u4f18\u4e8e\u914d\u7f6e\u201d\u7684\u539f\u5219\uff0c\u8ba9\u4f60\u80fd\u591f\u5feb\u901f\u642d\u5efa\u5e94\u7528\u7684\u6846\u67b6\uff0c\u4ece\u800c\u4f7f\u5f97Java EE \u5f00\u53d1\u53d8\u5f97\u5f02\u5e38\u7b80\u5355\u3002', u'year': 2016}]}
+49
+E:\pycharm\httpspace\common\ConnetExcel.py:87: DeprecationWarning: Call to deprecated function get_sheet_by_name (Use wb[sheetname]).
+  wtable = writeExcel.get_sheet_by_name('dataout')
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test6deleteBook.testDeleteBook</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c5',1)">Detail</a></td>
+</tr>
+
+<tr id='pt5.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testdeletebook</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.1')" >
+        pass</a>
+
+    <div id='div_pt5.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt5.1: 1
+00601
+{'id': '2', 'caseid': u'00601'}
+http://127.0.0.1:8080/test/book/deleteBook
+{u'errorNo': u'1', u'errorInfo': u'\u8be5id\u4e0d\u5b58\u5728\u3002', u'success': False}
+False
+1
+该id不存在。
+1
+E:\pycharm\httpspace\common\ConnetExcel.py:87: DeprecationWarning: Call to deprecated function get_sheet_by_name (Use wb[sheetname]).
+  wtable = writeExcel.get_sheet_by_name('dataout')
+00602
+{'id': '999', 'caseid': u'00602'}
+http://127.0.0.1:8080/test/book/deleteBook
+{u'errorNo': u'1', u'errorInfo': u'\u8be5id\u4e0d\u5b58\u5728\u3002', u'success': False}
+False
+1
+该id不存在。
+3
+E:\pycharm\httpspace\common\ConnetExcel.py:87: DeprecationWarning: Call to deprecated function get_sheet_by_name (Use wb[sheetname]).
+  wtable = writeExcel.get_sheet_by_name('dataout')
+[{'id': '2', 'caseid': u'00601'}, {'id': '999', 'caseid': u'00602'}]
+00601
+2
+44
+00601
+{u'totalProperty': 8, u'root': [{u'id': 12, u'author': u'John Ferguson Smart', u'name': u'Jenkins\u6743\u5a01\u6307\u5357', u'digest': u'John Ferguson Smart\uff0cWakaleo Consulting\u7684\u4e3b\u7ba1\u3002', u'year': 2016}, {u'id': 11, u'author': u'John Ferguson Smart', u'name': u'Jenkins\u6743\u5a01\u6307\u5357', u'digest': u'John Ferguson Smart\uff0cWakaleo Consulting\u7684\u4e3b\u7ba1\u3002', u'year': 2016}, {u'id': 10, u'author': u'John Ferguson Smart', u'name': u'Jenkins\u6743\u5a01\u6307\u5357', u'digest': u'John Ferguson Smart\uff0cWakaleo Consulting\u7684\u4e3b\u7ba1\u3002', u'year': 2016}, {u'id': 8, u'author': u'John Ferguson Smart', u'name': u'Jenkins\u6743\u5a01\u6307\u5357', u'digest': u'John Ferguson Smart\uff0cWakaleo Consulting\u7684\u4e3b\u7ba1\u3002', u'year': 2016}, {u'id': 5, u'author': u'john1', u'name': u'\u6d4b\u8bd5\u6307\u53571', u'digest': u'Selenium', u'year': 2019}, {u'id': 4, u'author': u'\u8a79\u59c6\u65af\xb7\u7279\u6069\u5e03\u5c14\uff08James Turnbull\uff09', u'name': u'\u7b2c\u4e00\u672cDocker\u4e66 \u4fee\u8ba2\u7248', u'digest': u'Docker\u662f\u4e00\u4e2a\u5f00\u6e90\u7684\u5e94\u7528\u5bb9\u5668\u5f15\u64ce\uff0c\u5f00\u53d1\u8005\u53ef\u4ee5\u5229\u7528Docker\u6253\u5305\u81ea\u5df1\u7684\u5e94\u7528\u4ee5\u53ca\u4f9d\u8d56\u5305\u5230\u4e00\u4e2a\u53ef\u79fb\u690d\u7684\u5bb9\u5668\u4e2d\uff0c\u7136\u540e\u53d1\u5e03\u5230\u4efb\u4f55\u6d41\u884c\u7684Linux\u673a\u5668\u4e0a\uff0c\u4e5f\u53ef\u4ee5\u5b9e\u73b0\u865a\u62df\u5316\u3002', u'year': 2016}, {u'id': 3, u'author': u'\u8bb8\u6653\u658c', u'name': u'Maven\u5b9e\u6218', u'digest': u'\u672c\u4e66\u662f\u56fd\u5185\u7b2c\u4e00\u672c\u516c\u5f00\u51fa\u7248\u7684Maven\u4e13\u8457\u3002\u5b83\u5185\u5bb9\u65b0\u9896\uff0c\u57fa\u4e8e*\u53d1\u5e03\u7684Maven 3.0\uff0c\u4e0d\u4ec5\u8be6\u5c3d\u8bb2\u89e3\u4e86Maven 3.0\u7684\u6240\u6709\u65b0\u529f\u80fd\u548c\u65b0\u7279\u6027\u3002', u'year': 2011}, {u'id': 1, u'author': u'\u6c6a\u4e91\u98de', u'name': u'JavaEE\u5f00\u53d1\u7684\u98a0\u8986\u8005: Spring Boot\u5b9e\u6218', u'digest': u'\u5728\u5f53\u4ecaJava EE \u5f00\u53d1\u4e2d\uff0cSpring \u6846\u67b6\u662f\u5f53\u4e4b\u65e0\u6127\u7684\u738b\u8005\u3002\u800cSpring Boot \u662fSpring \u4e3b\u63a8\u7684\u57fa\u4e8e\u201c\u4e60\u60ef\u4f18\u4e8e\u914d\u7f6e\u201d\u7684\u539f\u5219\uff0c\u8ba9\u4f60\u80fd\u591f\u5feb\u901f\u642d\u5efa\u5e94\u7528\u7684\u6846\u67b6\uff0c\u4ece\u800c\u4f7f\u5f97Java EE \u5f00\u53d1\u53d8\u5f97\u5f02\u5e38\u7b80\u5355\u3002', u'year': 2016}]}
+87
+E:\pycharm\httpspace\common\ConnetExcel.py:87: DeprecationWarning: Call to deprecated function get_sheet_by_name (Use wb[sheetname]).
+  wtable = writeExcel.get_sheet_by_name('dataout')
+00602
+999
+45
+00602
+{u'totalProperty': 8, u'root': [{u'id': 12, u'author': u'John Ferguson Smart', u'name': u'Jenkins\u6743\u5a01\u6307\u5357', u'digest': u'John Ferguson Smart\uff0cWakaleo Consulting\u7684\u4e3b\u7ba1\u3002', u'year': 2016}, {u'id': 11, u'author': u'John Ferguson Smart', u'name': u'Jenkins\u6743\u5a01\u6307\u5357', u'digest': u'John Ferguson Smart\uff0cWakaleo Consulting\u7684\u4e3b\u7ba1\u3002', u'year': 2016}, {u'id': 10, u'author': u'John Ferguson Smart', u'name': u'Jenkins\u6743\u5a01\u6307\u5357', u'digest': u'John Ferguson Smart\uff0cWakaleo Consulting\u7684\u4e3b\u7ba1\u3002', u'year': 2016}, {u'id': 8, u'author': u'John Ferguson Smart', u'name': u'Jenkins\u6743\u5a01\u6307\u5357', u'digest': u'John Ferguson Smart\uff0cWakaleo Consulting\u7684\u4e3b\u7ba1\u3002', u'year': 2016}, {u'id': 5, u'author': u'john1', u'name': u'\u6d4b\u8bd5\u6307\u53571', u'digest': u'Selenium', u'year': 2019}, {u'id': 4, u'author': u'\u8a79\u59c6\u65af\xb7\u7279\u6069\u5e03\u5c14\uff08James Turnbull\uff09', u'name': u'\u7b2c\u4e00\u672cDocker\u4e66 \u4fee\u8ba2\u7248', u'digest': u'Docker\u662f\u4e00\u4e2a\u5f00\u6e90\u7684\u5e94\u7528\u5bb9\u5668\u5f15\u64ce\uff0c\u5f00\u53d1\u8005\u53ef\u4ee5\u5229\u7528Docker\u6253\u5305\u81ea\u5df1\u7684\u5e94\u7528\u4ee5\u53ca\u4f9d\u8d56\u5305\u5230\u4e00\u4e2a\u53ef\u79fb\u690d\u7684\u5bb9\u5668\u4e2d\uff0c\u7136\u540e\u53d1\u5e03\u5230\u4efb\u4f55\u6d41\u884c\u7684Linux\u673a\u5668\u4e0a\uff0c\u4e5f\u53ef\u4ee5\u5b9e\u73b0\u865a\u62df\u5316\u3002', u'year': 2016}, {u'id': 3, u'author': u'\u8bb8\u6653\u658c', u'name': u'Maven\u5b9e\u6218', u'digest': u'\u672c\u4e66\u662f\u56fd\u5185\u7b2c\u4e00\u672c\u516c\u5f00\u51fa\u7248\u7684Maven\u4e13\u8457\u3002\u5b83\u5185\u5bb9\u65b0\u9896\uff0c\u57fa\u4e8e*\u53d1\u5e03\u7684Maven 3.0\uff0c\u4e0d\u4ec5\u8be6\u5c3d\u8bb2\u89e3\u4e86Maven 3.0\u7684\u6240\u6709\u65b0\u529f\u80fd\u548c\u65b0\u7279\u6027\u3002', u'year': 2011}, {u'id': 1, u'author': u'\u6c6a\u4e91\u98de', u'name': u'JavaEE\u5f00\u53d1\u7684\u98a0\u8986\u8005: Spring Boot\u5b9e\u6218', u'digest': u'\u5728\u5f53\u4ecaJava EE \u5f00\u53d1\u4e2d\uff0cSpring \u6846\u67b6\u662f\u5f53\u4e4b\u65e0\u6127\u7684\u738b\u8005\u3002\u800cSpring Boot \u662fSpring \u4e3b\u63a8\u7684\u57fa\u4e8e\u201c\u4e60\u60ef\u4f18\u4e8e\u914d\u7f6e\u201d\u7684\u539f\u5219\uff0c\u8ba9\u4f60\u80fd\u591f\u5feb\u901f\u642d\u5efa\u5e94\u7528\u7684\u6846\u67b6\uff0c\u4ece\u800c\u4f7f\u5f97Java EE \u5f00\u53d1\u53d8\u5f97\u5f02\u5e38\u7b80\u5355\u3002', u'year': 2016}]}
+89
+E:\pycharm\httpspace\common\ConnetExcel.py:87: DeprecationWarning: Call to deprecated function get_sheet_by_name (Use wb[sheetname]).
+  wtable = writeExcel.get_sheet_by_name('dataout')
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>5</td>
+    <td>5</td>
+    <td>0</td>
+    <td>0</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>
